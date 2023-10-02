@@ -1,0 +1,118 @@
+body{
+    width: 100vw;
+    height: 50vw;
+    overflow: hidden;
+    background: linear-gradient(180deg, rgb(0, 151, 236, 100%),rgb(255, 255, 255, 100%));
+}
+
+#sitelogo{
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    top: 8px;
+    left: 10px;
+}
+#logohead{
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    left: 75px;
+    top: 7px;
+    font-size: 22px;
+}
+#logosub{
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    left: 75px;
+    top: 30px;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 14px;
+}
+ul>li>img{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    display: flex;
+    top: 12px;
+    left: -10px;
+}
+ul>li{
+    margin: 5px 50px;
+    font-weight: lighter;
+    font-size: 20px;
+    position: relative;
+    /*right: -600px;*/
+    left: 45vw;
+    bottom: 3px;
+}
+.maintitle{
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    font-style: inherit;
+    font-size: 125px;
+    padding: 0;
+    margin: 0;
+    left: 10vw;
+    top: 1vw;
+}
+.subtitle{
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    font-style: inherit;
+    font-size: 25px;
+    padding: 0;
+    margin: 0;
+    top: 1vw;
+    left: 20vw;
+}
+.img-fluid{
+    width: 40vw;
+    height: 20vw;
+    position: relative;
+    top: 4vw;
+    left: 20%;
+}
+div>img{
+    width: 170px;
+    height: 120px;
+    position: relative;
+    left: 38px;
+    top: 10px;
+}
+div>h4{
+    width: fit-content;
+    position: relative;
+    margin: auto;
+    text-align: center;
+    font-size: 25px;
+    top: 10px;
+}
+.custdiv{
+    width: 250px;
+    height: 160px;
+    position: absolute;
+    top: 6vw;
+    right: 2vw;
+}
+.itemdiv{
+    width: 250px;
+    height: 160px;
+    position: absolute;
+    top: 19vw;
+    right: 2vw;
+}
+.orderdiv {
+    width: 250px;
+    height: 160px;
+    position: absolute;
+    top: 32vw;
+    right: 2vw;
+}
+a>div{
+    background: linear-gradient(180deg, rgb(255, 255, 255, 100%),rgb(255, 255, 255, 0%));
+    border-radius: 40px;
+}
