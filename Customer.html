@@ -38,35 +38,35 @@
     <div class="formdiv">
         <form class="row g-3 needs-validation" novalidate>
             <div class="col-md-4">
-                <label for="validationCustom01" class="form-label">Customer ID</label>
-                <input type="text" class="form-control" id="validationCustom01" required>
+                <label for="customer-id" class="form-label">Customer ID</label>
+                <input type="text" class="form-control" id="customer-id" required>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
             </div>
             <div class="col-md-4">
-                <label for="validationCustom02" class="form-label">Customer Name</label>
-                <input type="text" class="form-control" id="validationCustom02" required>
+                <label for="customer-name" class="form-label">Customer Name</label>
+                <input type="text" class="form-control" id="customer-name" required>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
             </div>
             <div class="col-md-4">
-                <label for="validationCustom02" class="form-label">Customer Address</label>
-                <input type="text" class="form-control" id="validationCustom03" required>
+                <label for="customer-address" class="form-label">Customer Address</label>
+                <input type="text" class="form-control" id="customer-address" required>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
             </div>
             <div class="col-md-4">
-                <label for="validationCustom02" class="form-label">Customer Contact</label>
-                <input type="text" class="form-control" id="validationCustom04" required>
+                <label for="customer-contact" class="form-label">Customer Contact</label>
+                <input type="text" class="form-control" id="customer-contact" required>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
             </div>
             <div class="mt-5">
-                <button type="submit" class="btn btn-success">Submit</button>
+                <button type="button" class="btn btn-success">Submit</button>
                 <button type="button" class="btn btn-primary">Update</button>
                 <button type="button" class="btn btn-danger">Delete</button>
                 <button type="button" class="btn btn-warning">Reset</button>
@@ -81,33 +81,121 @@
         <table class="table">
             <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Cust_ID</th>
+                <th scope="col">Cust_Name</th>
+                <th scope="col">Cust_Address</th>
+                <th scope="col">Cust_Contact</th>
             </tr>
             </thead>
             <tbody class="table-group-divider">
             <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
+                <th></th>
+                <td></td>
+                <td></td>
+                <td></td>
             </tr>
             </tbody>
         </table>
     </div>
 </div>
+
+<script src="assest/bootstrap/js/bootstrap.min.js"></script>
+<script src="assest/lib/jquery.min.js"></script>
+
+<script>
+    //submit
+    $("button[type='button']").eq(0).on("click",()=>{
+        let c_id = $("#customer-id").val();
+        let c_name = $("#customer-name").val();
+        let c_address = $("#customer-address").val();
+        let c_contact = $("#customer-contact").val();
+
+        let newRow = $("<tr>").append(
+            $("<td>").text(c_id),
+            $("<td>").text(c_name),
+            $("<td>").text(c_address),
+            $("<td>").text(c_contact),
+        );
+
+        // Append the new row to the table body
+        $(".table tbody").append(newRow);
+
+        // Clear input fields after adding the data
+        $("#customer-id").val("");
+        $("#customer-name").val("");
+        $("#customer-address").val("");
+        $("#customer-contact").val("");
+
+        console.log(`customer_Id: ${c_id}\n customer_Name: ${c_name}\n customer_Address: ${c_address}\n customer_Contact: ${c_contact}\n `);
+
+        $('#customer-id').val('');
+        $('#customer-name').val('');
+        $('#customer-address').val('');
+        $('#customer-contact').val('');
+    })
+
+// delication
+    $("tbody").on("click","tr",function (){
+        // console.log("hello");
+        let data_col = $(this).find("td");
+        console.log(data_col);
+
+        data_col.each(function (){
+            console.log($(this).text());
+
+
+        })
+    })
+
+    $("tbody").on("click", "tr", function () {
+
+        row_index = $(this).index();
+        let customer_id = $(this).find("td:eq(0)").text();
+        let customer_name = $(this).find("td:eq(1)").text();
+        let customer_address = $(this).find("td:eq(2)").text();
+        let customer_contact = $(this).find("td:eq(3)").text();
+
+        $('#customer-id').val(customer_id);
+        $('#customer-name').val(customer_name);
+        $('#customer-address').val(customer_address);
+        $('#customer-contact').val(customer_contact);
+    });
+
+//update
+    $("button[type='button']").eq(1).on("click",()=>{
+        let c_id = $("#customer-id").val();
+        let c_name = $("#customer-name").val();
+        let c_address = $("#customer-address").val();
+        let c_contact = $("#customer-contact").val();
+
+        let record = `<td class="Customer ID:">${c_id}</td><td class="Customer Name:">${c_name}</td> <td class="Customer Address:">${c_address}</td><td class="Customer Contact:">${c_contact}`;
+
+        $("tbody>tr").eq(row_index).html(record)
+
+        $('#customer-id').val('');
+        $('#customer-name').val('');
+        $('#customer-address').val('');
+        $('#customer-contact').val('');
+    })
+
+// delete
+    $("button[type='button']").eq(2).on("click",()=> {
+        $("tbody>tr").eq(row_index).remove();
+
+        $('#customer-id').val('');
+        $('#customer-name').val('');
+        $('#customer-address').val('');
+        $('#customer-contact').val('');
+    })
+
+// reset
+    $("button[type='button']").eq(3).on("click",()=>{
+        $('#customer-id').val('');
+        $('#customer-name').val('');
+        $('#customer-address').val('');
+        $('#customer-contact').val('');
+    })
+
+</script>
 </body>
 </html>
