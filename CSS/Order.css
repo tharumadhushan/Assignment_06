@@ -2,30 +2,38 @@ body{
     width: 100vw;
     height: 50vw;
     overflow-x: hidden;
+}
+section{
+    width: 100vw;
+    height: content-box;
+    position: absolute;
     background: linear-gradient(180deg, rgb(0, 151, 236, 100%),rgb(255, 255, 255, 100%));
 }
 
+ul{
+    width: 100vw;
+    height: fit-content;
+    background: white;
+}
 #sitelogo{
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     position: absolute;
-    top: 8px;
     left: 10px;
 }
 #logohead{
     width: fit-content;
     height: fit-content;
     position: absolute;
-    left: 75px;
-    top: 7px;
+    left: 60px;
     font-size: 22px;
 }
 #logosub{
     width: fit-content;
     height: fit-content;
     position: absolute;
-    left: 75px;
-    top: 30px;
+    left: 60px;
+    top: 23px;
     font-style: italic;
     font-weight: normal;
     font-size: 14px;
@@ -36,16 +44,12 @@ ul>li>img{
     position: absolute;
     display: flex;
     top: 12px;
-    left: -10px;
+}
+ul>li>a{
+    margin-left: 5px;
 }
 ul>li{
-    margin: 5px 50px;
-    font-weight: lighter;
-    font-size: 20px;
-    position: relative;
-    /*right: -600px;*/
-    left: 45vw;
-    bottom: 3px;
+    margin-right: 25px;
 }
 .formdiv{
     width: 70vw;
@@ -96,11 +100,9 @@ ul>li{
     top: 14vw;
 }
 .tablediv>div{
-    width: 65vw;
+    width: 35vw;
     height: fit-content;
     position: relative;
-    left: 0;
-    right: 0;
     top: 10px;
     margin: auto;
 }
